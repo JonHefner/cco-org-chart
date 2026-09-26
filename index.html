@@ -1,1 +1,25 @@
-@file:/workspace/cco-org/galaxy/phone-site/universe-loader.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CCO Conti Way Org Chart</title>
+<style>html,body{margin:0;height:100%;background:#05020F;color:#D4AF37;font-family:system-ui}#boot{padding:24px}</style>
+</head>
+<body>
+<div id="boot">Loading Conti Way org chart…</div>
+<script src="chart-b64-a.js"></script>
+<script src="chart-b64-b.js"></script>
+<script>
+async function main() {
+  const B64 = (window.__CW_B64_A || '') + (window.__CW_B64_B || '');
+  const bin = Uint8Array.from(atob(B64), c => c.charCodeAt(0));
+  const ds = new DecompressionStream('gzip');
+  const stream = new Blob([bin]).stream().pipeThrough(ds);
+  const html = await new Response(stream).text();
+  document.open(); document.write(html); document.close();
+}
+main().catch(e => { document.getElementById('boot').textContent = 'Load failed: ' + e; });
+</script>
+</body>
+</html>

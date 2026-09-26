@@ -8,11 +8,22 @@
 </head>
 <body>
 <div id="boot">Loading Conti Way org chart…</div>
-<script src="chart-b64-a.js"></script>
-<script src="chart-b64-b.js"></script>
+<script src="chart-b64-0.js"></script>
+<script src="chart-b64-1.js"></script>
+<script src="chart-b64-2.js"></script>
+<script src="chart-b64-3.js"></script>
+<script src="chart-b64-4a.js"></script>
+<script src="chart-b64-4b.js"></script>
+<script>window.__CW_B64_4=(window.__CW_B64_4A||"")+(window.__CW_B64_4B||"");</script>
+<script src="chart-b64-5.js"></script>
+<script src="chart-b64-6.js"></script>
+<script src="chart-b64-7.js"></script>
+<script src="chart-b64-8a.js"></script>
+<script src="chart-b64-8b.js"></script>
+<script>window.__CW_B64_8=(window.__CW_B64_8A||"")+(window.__CW_B64_8B||"");</script>
 <script>
 async function main() {
-  const B64 = (window.__CW_B64_A || '') + (window.__CW_B64_B || '');
+  const B64 = (window.__CW_B64_0||"")+(window.__CW_B64_1||"")+(window.__CW_B64_2||"")+(window.__CW_B64_3||"")+(window.__CW_B64_4||"")+(window.__CW_B64_5||"")+(window.__CW_B64_6||"")+(window.__CW_B64_7||"")+(window.__CW_B64_8||"");
   const bin = Uint8Array.from(atob(B64), c => c.charCodeAt(0));
   const ds = new DecompressionStream('gzip');
   const stream = new Blob([bin]).stream().pipeThrough(ds);

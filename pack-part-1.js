@@ -1,1 +1,1 @@
-window.__CW_P1="PLACEHOLDER";
+@/tmp/b64parts/part-1.js
